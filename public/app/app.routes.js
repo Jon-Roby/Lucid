@@ -1,11 +1,22 @@
-angular.module('app.routes', ['ngRoute'])
-  .config(function($routeProvider, $locationProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'app/views/pages/home.html',
-        controller: 'mainController',
-        controllerAs: 'main'
+angular.module('app.routes', ['ui.router'])
+  .config(function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+      .state('home', {
+        url: '/home',
+        templateUrl: 'app/views/pages/home.html'
+      })
+
+      .state('about', {
+
       });
 
-    $locationProvider.html5Mode(true);
+      // .when('/', {
+      //   templateUrl: 'app/views/pages/home.html',
+      //   controller: 'mainController',
+      //   controllerAs: 'main'
+      // });
+      //
+      // $locationProvider.html5Mode(true);
   });
