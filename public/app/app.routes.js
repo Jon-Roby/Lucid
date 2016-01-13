@@ -3,13 +3,19 @@ angular.module('app.routes', ['ui.router'])
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-      .state('home', {
-        url: '/home',
-        templateUrl: 'app/views/pages/home.html'
+    
+      .state('login', {
+        url: '/login',
+        templateUrl: "app/views/login.html",
+        controller: "mainController",
+        controllerAs: "login"
       })
 
-      .state('about', {
-
+      .state('signup', {
+        url: '/signup',
+        templateUrl: "app/views/signup.html",
+        controller: "mainController",
+        controllerAs: "signup"
       });
 
       // .when('/', {
@@ -18,5 +24,5 @@ angular.module('app.routes', ['ui.router'])
       //   controllerAs: 'main'
       // });
       //
-      // $locationProvider.html5Mode(true);
+      // $urlRouterProvider.html5Mode(true);
   });
