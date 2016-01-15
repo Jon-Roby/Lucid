@@ -23,7 +23,7 @@ angular.module('mainCtrl', [])
   			.success(function(data) {
   				vm.processing = false;
   				if (data.success) {
-  					$location.path('/login');
+  					$location.path('/posts');
   				} else {
   					vm.error = data.message;
   				}
@@ -37,7 +37,7 @@ angular.module('mainCtrl', [])
   			.success(function(data) {
   				vm.processing = false;
   				if (data.success)
-  					$location.path('/users');
+  					$location.path('/posts');
   				else
   					vm.error = data.message;
   			});

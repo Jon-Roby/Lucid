@@ -18,9 +18,23 @@
 
     <!-- Controllers -->
     <script src="app/controllers/mainCtrl.js"></script>
+    <script src="app/components/postsDisplay/postsDisplayCtrl.js"></script>
+    <script src="app/components/icons/iconsCtrl.js"></script>
+    <script src="app/components/userSidebar/userSidebarCtrl.js"></script>
+    <script src="app/components/postDisplay/postDisplayCtrl.js"></script>
+    <script src="app/components/postAuthor/postAuthorCtrl.js"></script>
+
+    <script src="app/controllers/userCtrl.js"></script>
 
     <!-- Services -->
     <script src="app/services/authService.js"></script>
+    <script src="app/components/postsDisplay/postsDisplayService.js"></script>
+    <script src="app/components/icons/iconsService.js"></script>
+    <script src="app/components/userSidebar/userSidebarService.js"></script>
+    <script src="app/components/postDisplay/postDisplayService.js"></script>
+    <script src="app/components/postAuthor/postAuthorService.js"></script>
+
+    <script src="app/services/userService.js"></script>
 
     <!-- Main Angular App Files -->
     <script src="app/app.routes.js"></script>
@@ -28,9 +42,70 @@
   </head>
 
   <body ng-app="myApp" ng-controller="mainController as main">
-    <div>
-      <h1>Hello</h1>
-    </div>
+
+
+
+    <!-- Navbar -->
+
+	<div id="navbar">
+
+		<div id="navbar-container">
+
+			<div id="navbar-left">
+				<div id="navbar-title">
+					<ul>
+				  	<li><a href="/">
+							<div id="logo">
+								<div class="first">L</div>
+								<div class="second">U</div>
+								<div class="first">C</div>
+								<div class="first">I</div>
+								<div class="first">D</div>
+							</div>
+							</a></li>
+					</ul>
+				</div>
+
+				<div class="navbar-options">
+
+  					<ul>
+  						<li><a href="">posts</a></li>
+  						<li><a href="">top</a></li>
+  						<li><a href="">bookmarks</a></li>
+  					</ul>
+
+				</div>
+			</div>
+
+			<div id="navbar-right">
+			  <ul>
+
+					<li id="write"><a href="tuts/create">write</a></li>
+					<!-- <li class="login"><a href="/login">login</a></li> -->
+					<li class="login" ng-hide="main.loggedIn"><a href="/login">login</a></li>
+					<li class="login" ng-hide="!main.loggedIn"><a href="#" ng-click="main.doLogout()">logout</a\></li>
+			  </ul>
+			</div>
+
+
+
+		</div>
+	</div>
+
+	<!-- <div>
+		<div class="navbar-tab">
+			<div class="container">
+				<div class="navbar-options">
+					<ul>
+						<li class="active"><a href="">posts</a></li>
+						<li><a href="">top</a></li>
+						<li><a href="">bookmarks</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
 
     <div ui-view></div>
   </body>

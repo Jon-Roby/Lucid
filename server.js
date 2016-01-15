@@ -25,6 +25,8 @@ app.use(express.static(__dirname + '/public'));
 var apiRoutes = require('./app/routes/api')(app, express);
 app.use('/api', apiRoutes);
 
+// PLACE SPLIT UP API HERE . THIS: https://github.com/strongloop/express/blob/master/examples/route-separation/index.js
+
 app.get('*', function(req, res) {
 	res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
 });

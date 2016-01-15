@@ -23,9 +23,8 @@ angular.module('authService', [])
 			password: password
 		})
 			.success(function(data) {
-
 				AuthToken.setToken(data.token);
-       			return data;
+        return data;
 			});
 	};
 

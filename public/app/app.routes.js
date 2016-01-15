@@ -1,28 +1,104 @@
 angular.module('app.routes', ['ui.router'])
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-    
+
       .state('login', {
         url: '/login',
-        templateUrl: "app/views/login.html",
+        templateUrl: "app/views/pages/users/login.html",
         controller: "mainController",
         controllerAs: "login"
       })
 
       .state('signup', {
         url: '/signup',
-        templateUrl: "app/views/signup.html",
+        templateUrl: "app/views/pages/users/signup.html",
         controller: "mainController",
         controllerAs: "signup"
+      })
+
+  		.state('users', {
+        url: '/users',
+  			templateUrl: 'app/views/pages/users/all.html',
+  			controller: 'userController',
+  			controllerAs: 'user'
+  		})
+
+  		.state('profile', {
+        url: '/users/:user_id',
+  			templateUrl: 'app/views/pages/users/userProfile.html',
+  			controller: 'userEditController',
+  			controllerAs: 'user'
+  		})
+
+      .state('posts', {
+        url: '/posts',
+        views: {
+          '': {
+            templateUrl: "app/components/postsDisplay/postsDisplayView.html",
+            controller: "postsDisplayController",
+            controllerAs: "postsDisplay"
+          },
+          'icons@posts': {
+            templateUrl: "app/components/icons/iconsView.html",
+            controller: "iconsController",
+            controllerAs: "icons"
+          },
+          'menu@posts': {
+            templateUrl: 'app/components/userSidebar/userSidebarView.html',
+            controller: 'userSidebarController',
+            controllerAs: 'menu'
+          }
+        }
+      })
+
+      .state('post', {
+        url: '/posts/:post_id',
+        views: {
+          '': {
+            templateUrl: "app/components/postDisplay/postDisplayView.html",
+            controller: "postDisplayController",
+            controllerAs: "postDisplay"
+          },
+          'postAuthor@post': {
+            templateUrl: "app/components/postAuthor/postAuthorView.html",
+            controller: "postAuthorController",
+            controllerAs: "postAuthor"
+          },
+          'menu@post': {
+            templateUrl: 'app/components/userSidebar/userSidebarView.html',
+            controller: 'userSidebarController',
+            controllerAs: 'menu'
+          }
+        }
       });
 
-      // .when('/', {
-      //   templateUrl: 'app/views/pages/home.html',
-      //   controller: 'mainController',
-      //   controllerAs: 'main'
-      // });
+
+
+
+      // .state('createPost', {
+      //   url: '/posts/create',
+  		// 	templateUrl: 'app/views/pages/posts/createPost.html',
+  		// 	controller: 'postCreateController',
+  		// 	controllerAs: 'post'
+  		// })
       //
-      // $urlRouterProvider.html5Mode(true);
+      // .state('editPost', {
+      //   url: '/posts/:post_id/edit',
+  		// 	templateUrl: 'app/views/pages/posts/createPost.html',
+  		// 	controller: 'postEditController',
+  		// 	controllerAs: 'post'
+  		// })
+      //
+  		// .state('viewPost', {
+      //   url: '/posts/:post_id',
+  		// 	templateUrl: 'app/views/pages/posts/singlePost.html',
+  		// 	controller: 'postViewController',
+  		// 	controllerAs: 'post'
+  		// });
+
+
+
+      $locationProvider.html5Mode(true);
   });

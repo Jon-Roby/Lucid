@@ -1,0 +1,44 @@
+<!-- Sidebar
+<div class="lessons-right">
+  {{ menu.userData.name }}
+
+  <div>Bookmarks</div>
+  <div ng-repeat="n in menu.userData.bookmarks track by $index" >
+    <div ng-repeat="(key, value) in n track by $index">
+      <div><a href="/posts/{{value}}">{{ key }}</a></div>
+    </div>
+  </div>
+
+  <div>Share</div>
+
+</div> -->
+
+
+
+<div class="lessons-right">
+  {{ menu.userData.username }}
+
+  <!-- <div>Favorites</div>
+  <div ng-repeat="n in menu.userData.favorites" >
+    <div ng-repeat="(key, value) in n">
+      <div><a href="/menus/{{value}}">{{ key }}</a></div>
+    </div>
+  </div> -->
+
+  <div>Bookmarks</div>
+  <div ng-repeat="n in menu.userData.bookmarks" >
+    <div ng-repeat="(key, value) in n">
+      <div><a href="/posts/{{key}}">{{ value }}</a></div>
+    </div>
+  </div>
+
+  <div>Subscriptions</div>
+  <div ng-repeat="n in menu.userData.subscriptions" >
+    <div ng-repeat="(key, value) in n">
+      <div><a href="/posts/{{key}}">{{ value }}</a></div>
+    </div>
+  </div>
+
+  <div>Share</div>
+
+</div>

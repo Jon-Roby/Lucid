@@ -1,0 +1,44 @@
+<div class="row">
+
+    <div>
+        <div ui-view="icons"></div>
+    </div>
+
+</div>
+
+
+<div class="lessons-center">
+
+		<div>postsDisplayView</div>
+		<div ng-repeat="post in postsDisplay.posts">
+			<div class="card-lessons">
+
+				<div class="lessons-top">
+					<div class="lessons-author">{{ post.authorName }}</div>
+
+					<time am-time-ago="post.createdAt"></time>
+				</div>
+
+				<div>
+					<a ng-href="/posts/{{ post._id }}" class="lessons-title">{{ post.title }}</a>
+					<div class="lessons-body">{{ post.body }}</div>
+
+				</div>
+
+				<div class="lessons-bottom">
+					<div>{{ post.likes.length }} likes</div>
+					<div>0 responses</div>
+				</div>
+
+			</div>
+
+		</div>
+
+</div>
+
+
+<div class="row">
+    <div>
+        <div ui-view="menu"></div>
+    </div>
+</div>
