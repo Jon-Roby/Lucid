@@ -1,6 +1,6 @@
-angular.module('userCtrl', ['userService'])
+angular.module('userDisplayCtrl', ['userService'])
 
-.controller('userController', function(User) {
+.controller('userDisplayController', function(User) {
 
 	var vm = this;
 

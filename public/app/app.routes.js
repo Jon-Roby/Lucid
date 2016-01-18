@@ -25,13 +25,6 @@ angular.module('app.routes', ['ui.router'])
   			controllerAs: 'user'
   		})
 
-  		.state('profile', {
-        url: '/users/:user_id',
-  			templateUrl: 'app/views/pages/users/userProfile.html',
-  			controller: 'userEditController',
-  			controllerAs: 'user'
-  		})
-
       .state('posts', {
         url: '/posts',
         views: {
@@ -53,6 +46,14 @@ angular.module('app.routes', ['ui.router'])
         }
       })
 
+      .state('postCreate', {
+        url: '/posts/create',
+        templateUrl: 'app/components/postCreate/postCreateView.html',
+        controller: 'postCreateController',
+        controllerAs: 'post'
+      })
+
+
       .state('post', {
         url: '/posts/:post_id',
         views: {
@@ -72,33 +73,29 @@ angular.module('app.routes', ['ui.router'])
             controllerAs: 'menu'
           }
         }
-      });
+      })
 
+      .state('postEdit', {
+        url: '/posts/:post_id/edit',
+        templateUrl: 'app/components/postCreate/postCreateView.html',
+        controller: 'postEditController',
+        controllerAs: 'post'
+      })
 
+      .state('profile', {
+        url: '/users/:user_id',
+  			templateUrl: 'app/components/userDisplay/userDisplayView.html',
+  			controller: 'userDisplayController',
+  			controllerAs: 'user'
+  		})
 
-
-      // .state('createPost', {
-      //   url: '/posts/create',
-  		// 	templateUrl: 'app/views/pages/posts/createPost.html',
-  		// 	controller: 'postCreateController',
-  		// 	controllerAs: 'post'
-  		// })
-      //
-      // .state('editPost', {
-      //   url: '/posts/:post_id/edit',
-  		// 	templateUrl: 'app/views/pages/posts/createPost.html',
-  		// 	controller: 'postEditController',
-  		// 	controllerAs: 'post'
-  		// })
-      //
-  		// .state('viewPost', {
-      //   url: '/posts/:post_id',
-  		// 	templateUrl: 'app/views/pages/posts/singlePost.html',
-  		// 	controller: 'postViewController',
-  		// 	controllerAs: 'post'
+      // Allow a user to edit a profile
+      // .state('profile', {
+      //   url: '/users/:user_id/edit',
+  		// 	templateUrl: 'app/components/userDisplay/userDisplayView.html',
+  		// 	controller: '',
+  		// 	controllerAs: ''
   		// });
-
-
 
       $locationProvider.html5Mode(true);
   });

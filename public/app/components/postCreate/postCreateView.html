@@ -1,0 +1,54 @@
+
+
+
+
+	<div>
+		<input type="text" placeholder="Title" ng-model="post.postData.title"></input>
+	</div>
+
+	<div class="form-input-body">
+		<textarea class="input-textarea" placeholder="Lesson" ng-model="post.postData.body"></textarea>
+	</div>
+
+	<button ng-click="post.savePost()">Publish</button>
+
+
+
+
+
+
+	<div class="row show-hide-message" ng-show="post.message">
+		<div>
+			<div class="alert alert-info">
+				{{ post.message }}
+			</div>
+		</div>
+	</div>
+
+
+<!--
+<button ng-click="post.savePost()">check</button>
+		<form ng-submit="post.savePost()">
+
+
+			<input type="text" placeholder="Title" ng-model="post.postData.title"></input>
+
+
+			<div class="form-input-body">
+				<textarea class="input-textarea" placeholder="Lesson" ng-model="post.postData.body"></textarea>
+			</div>
+
+			<button type="submit">Publish</button>
+
+		</form>
+
+
+
+
+	<div class="row show-hide-message" ng-show="post.message">
+		<div>
+			<div class="alert alert-info">
+				{{ post.message }}
+			</div>
+		</div>
+	</div> -->

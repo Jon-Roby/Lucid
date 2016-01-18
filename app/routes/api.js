@@ -379,15 +379,15 @@ module.exports = function(app, express) {
 
 	});
 
-	apiRouter.route('/posts/:post_id')
-		.get(function(req, res) {
-			Post.findById(req.params.post_id, function(err, post) {
-				if (err) res.send(err);
-				res.json(post);
-			});
-		});
+	// apiRouter.route('/posts/:post_id')
+	// 	.get(function(req, res) {
+	// 		Post.findById(req.params.post_id, function(err, post) {
+	// 			if (err) res.send(err);
+	// 			res.json(post);
+	// 		});
+	// 	});
 
-	apiRouter.route('/posts/post/:post_id')
+	apiRouter.route('/posts/:post_id')
 		// get the user with that id
 		.get(function(req, res) {
 			Post.findById(req.params.post_id, function(err, post) {

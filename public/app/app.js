@@ -4,8 +4,8 @@ angular.module('myApp',
 	'app.routes',
 	'authService',
 	'mainCtrl',
-	'userCtrl',
-	'userService',
+	// 'userCtrl',
+	// 'userService',
 	'postsDisplayCtrl',
 	'postsDisplayService',
 	'iconsCtrl',
@@ -16,7 +16,13 @@ angular.module('myApp',
 	'postDisplayCtrl',
 	'postDisplayService',
 	'postAuthorCtrl',
-	'postAuthorService'
+	'postAuthorService',
+
+	'postCreateCtrl',
+	'postCreateService',
+
+	'userDisplayCtrl',
+	'userDisplayService'
 ])
 
 .config(function($httpProvider) {
