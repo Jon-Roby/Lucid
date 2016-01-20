@@ -1,0 +1,27 @@
+#userSidebar-title {
+  color: $color-dark-gray;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $color-dark-gray; //$color-light-gray
+  font-family: "Archer SSm A", "Archer SSm B";
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.13em;
+}
+
+#userSidebar {
+  // color: #34495E;
+  background-color: white; //#FAFAFA
+  // border: 1px solid #34495E; /*  */
+  height: 1000px;
+
+}
+
+.userSidebar-subheader {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.userSidebar-subheader {
+  text-decoration: none;
+  color: $color-primary;
+}

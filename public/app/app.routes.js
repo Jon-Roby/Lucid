@@ -29,6 +29,9 @@ angular.module('app.routes', ['ui.router'])
         url: '/posts',
         views: {
           '': {
+            templateUrl: "app/components/postsDisplay/postsDisplayLayout.html"
+          },
+          'postsDisplay@posts': {
             templateUrl: "app/components/postsDisplay/postsDisplayView.html",
             controller: "postsDisplayController",
             controllerAs: "postsDisplay"
@@ -87,7 +90,7 @@ angular.module('app.routes', ['ui.router'])
   			templateUrl: 'app/components/userDisplay/userDisplayView.html',
   			controller: 'userDisplayController',
   			controllerAs: 'user'
-  		})
+  		});
 
       // Allow a user to edit a profile
       // .state('profile', {

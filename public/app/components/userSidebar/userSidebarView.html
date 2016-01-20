@@ -15,8 +15,25 @@
 
 
 
-<div class="lessons-right">
-  {{ menu.userData.username }}
+
+<div id="userSidebar">
+  <div id="userSidebar-title"> {{ menu.userData.username }} profile</div>
+
+  <div class="userSidebar-subheader">Bookmarks</div>
+  <div ng-repeat="n in menu.userData.bookmarks" >
+    <div ng-repeat="(key, value) in n">
+      <div class="lists"><a href="/posts/{{key}}">{{ value }}</a></div>
+    </div>
+  </div>
+
+  <div class="userSidebar-subheader">Subscriptions</div>
+  <div ng-repeat="n in menu.userData.subscriptions" >
+    <div ng-repeat="(key, value) in n">
+      <div class="lists"><a href="/posts/{{key}}">{{ value }}</a></div>
+    </div>
+  </div>
+
+  <!-- <div>Share</div> -->
 
   <!-- <div>Favorites</div>
   <div ng-repeat="n in menu.userData.favorites" >
@@ -24,21 +41,5 @@
       <div><a href="/menus/{{value}}">{{ key }}</a></div>
     </div>
   </div> -->
-
-  <div>Bookmarks</div>
-  <div ng-repeat="n in menu.userData.bookmarks" >
-    <div ng-repeat="(key, value) in n">
-      <div><a href="/posts/{{key}}">{{ value }}</a></div>
-    </div>
-  </div>
-
-  <div>Subscriptions</div>
-  <div ng-repeat="n in menu.userData.subscriptions" >
-    <div ng-repeat="(key, value) in n">
-      <div><a href="/posts/{{key}}">{{ value }}</a></div>
-    </div>
-  </div>
-
-  <div>Share</div>
 
 </div>

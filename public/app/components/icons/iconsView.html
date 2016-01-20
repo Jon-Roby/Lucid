@@ -1,10 +1,10 @@
-<div class="lessons-left">
-  <div>Icons</div>
+<div class="icons">
+  <div id="icons-title">icons</div>
   <div ng-repeat="icon in icons.icons">
-    <div><a href="/users/{{icon._id}}/profile">{{ icon.username }}</a></div>
+    <div id="icons-link"><a  href="/users/{{icon._id}}">{{ icon.username }}</a></div>
     <div ng-repeat="iconArray in icon.posts | limitTo: 3"> <!-- Also icon.posts.slice(0,2) -->
       <div ng-repeat="(key, value) in iconArray">
-        <div><a href="/posts/{{value}}">{{ key }}</a></div>
+        <div class="lists"><a href="/posts/{{value}}">{{ key }}</a></div>
       </div>
     </div>
   </div>

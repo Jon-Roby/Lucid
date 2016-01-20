@@ -1,5 +1,5 @@
 var gulp       = require('gulp');
-var less       = require('gulp-less');
+var sass       = require('gulp-sass');
 var minifyCSS  = require('gulp-minify-css');
 var rename     = require('gulp-rename');
 var jshint     = require('gulp-jshint');
@@ -9,11 +9,11 @@ var ngAnnotate = require('gulp-ng-annotate');
 var nodemon    = require('gulp-nodemon');
 
 gulp.task('css', function() {
-  return gulp.src('public/assets/css/style.less')
-    .pipe(less())
+  return gulp.src('public/assets/stylesheets/style.scss')
+    .pipe(sass())
     .pipe(minifyCSS())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('public/assets/css'));
+    .pipe(gulp.dest('public/assets/stylesheets'));
 });
 
 gulp.task('js', function() {
@@ -42,14 +42,15 @@ gulp.task('angular', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('public/assets/css/style.less', ['css']);
+  gulp.watch('public/assets/stylesheets/**/*.scss', ['css']);
+  gulp.watch('public/assets/stylesheets/*.scss', ['css']);
   gulp.watch(['server.js', 'public/app/*.js', 'public/app/**/*.js'], ['js', 'angular']);
 });
 
 gulp.task('nodemon', function() {
   nodemon({
     script: 'server.js',
-    ext: 'js less html'
+    ext: 'js sass html'
   })
     .on('start', ['watch'])
     .on('change', ['watch'])

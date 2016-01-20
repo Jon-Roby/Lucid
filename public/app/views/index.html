@@ -4,11 +4,16 @@
     <meta charset="utf-8">
     <title>Lucid</title>
 
+    <!-- Use browserify and gulp to automate all of this -->
+
     <!-- Angular Routing html5Mode -->
 	  <base href='/'>
 
+    <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'> -->
+		<link rel="stylesheet" type="text/css" href="//cloud.typography.com/6030954/606888/css/fonts.css">
+
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/stylesheets/style.min.css">
 
     <!-- Angular -->
     <script src="assets/libs/angular/angular.min.js"></script>
@@ -52,66 +57,48 @@
 
     <!-- Navbar -->
 
-	<div id="navbar">
+    <div id="navbar">
 
-		<div id="navbar-container">
+      <div id="navbar-container">
 
-			<div id="navbar-left">
-				<div id="navbar-title">
-					<ul>
-				  	<li><a href="/">
-							<div id="logo">
-								<div class="first">L</div>
-								<div class="second">U</div>
-								<div class="first">C</div>
-								<div class="first">I</div>
-								<div class="first">D</div>
-							</div>
-							</a></li>
-					</ul>
-				</div>
+        <div id="navbar-left">
 
-				<div class="navbar-options">
-  					<ul>
-  						<li><a ui-sref="posts">posts</a></li>
-  						<li><a>top</a></li>
-  						<li><a>trending</a></li>
-  					</ul>
-				</div>
+          <div id="navbar-title">
+            <ul class="list-display-row">
+              <li><a href="/" class="first">L</a></li>
+              <li><a href="/" class="second">U</a></li>
+              <li><a href="/" class="first">C</a></li>
+              <li><a href="/" class="first">I</a></li>
+              <li><a href="/" class="first">D</a></li>
+            </ul>
+          </div>
 
-			</div>
+          <div id="navbar-options">
+            <ul class="list-display-row">
+              <li id="trending"><a ui-sref="posts">trending</a></li>
+              <li><a ui-sref="posts">new</a></li>
+              <li><a ui-sref="posts">top</a></li>
+            </ul>
 
-			<div id="navbar-right">
-			  <ul>
+          </div>
 
-					<li id="write"><a href="tuts/create">write</a></li>
-					<!-- <li class="login"><a href="/login">login</a></li> -->
-					<li class="login" ng-hide="main.loggedIn"><a href="/login">login</a></li>
-					<li class="login" ng-hide="!main.loggedIn"><a href="#" ng-click="main.doLogout()">logout</a\></li>
-			  </ul>
-			</div>
+        </div>
 
+        <div id="navbar-right">
 
+          <ul class="list-display-row">
+            <li><a ui-sref="postCreate" id="button-write" class="button">write</a></li>
+            <li><a ui-sref="login" ng-hide="main.loggedIn" id="button-log" class="button">login</a></li>
+            <li><a ui-sref="/" ng-hide="!main.loggedIn" id="button-log" class="button" ng-click="main.doLogout()">logout</a></li>
+          </ul>
 
-		</div>
-	</div>
+        </div>
 
-	<!-- <div>
-		<div class="navbar-tab">
-			<div class="container">
-				<div class="navbar-options">
-					<ul>
-						<li class="active"><a href="">posts</a></li>
-						<li><a href="">top</a></li>
-						<li><a href="">bookmarks</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div> -->
+      </div>
+    </div>
 
+    <div class="angular-view" ui-view></div>
 
-    <div ui-view></div>
   </body>
 
 </html>

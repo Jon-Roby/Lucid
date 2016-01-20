@@ -1,0 +1,31 @@
+@import 'base/module';
+@import 'components/module';
+
+@font-face {
+	font-family: 'Montserrat-Light';
+	src: url('../fonts/Montserrat-Light.otf');
+}
+
+@font-face {
+	font-family: 'Montserrat-UltraLight';
+	src: url('../fonts/Montserrat-UltraLight.otf');
+}
+
+@font-face {
+	font-family: 'Avenir';
+	src: url('../fonts/AvenirNextLTPro-Regular.otf');
+}
+
+body {
+  font-family: 'Montserrat-Light';
+	letter-spacing: .5px;
+	// background-image: url("map.jpg");
+	// background-color: transparent;
+	background-size: contain;
+
+
+}
+
+.angular-view {
+	padding-top: 80px;
+}

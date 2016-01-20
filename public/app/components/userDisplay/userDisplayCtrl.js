@@ -8,7 +8,6 @@ angular.module('userDisplayCtrl', ['userDisplayService'])
 	UserDisplay.get($stateParams.user_id)
 		.success(function(data) {
 			vm.userData = data;
-      console.log(vm.userData);
 		});
 
   // vm.saveUser = function() {
