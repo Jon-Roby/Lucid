@@ -3,7 +3,7 @@ var app        = express();
 var bodyParser = require('body-parser');
 var morgan     = require('morgan');
 var mongoose   = require('mongoose');
-// var config 	   = require('./config/auth.js');
+testing
 var path 	     = require('path');
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,7 +18,7 @@ app.use(function(req, res, next) {
 
 app.use(morgan('dev'));
 
-mongoose.connect(process.env.MONGOLAB_URI || config.database);
+mongoose.connect(process.env.MONGOLAB_URI); //|| config.database
 
 app.use(express.static(__dirname + '/public'));
 
