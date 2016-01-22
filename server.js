@@ -3,7 +3,7 @@ var app        = express();
 var bodyParser = require('body-parser');
 var morgan     = require('morgan');
 var mongoose   = require('mongoose');
-testing
+// var config 	   = require('./config/auth.js');
 var path 	     = require('path');
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -31,5 +31,5 @@ app.get('*', function(req, res) {
 	res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
 });
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT); //config.database
 console.log('Magic happens on port ' + process.env.PORT);
