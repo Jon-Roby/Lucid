@@ -28,6 +28,7 @@
     "gulp-ng-annotate": "^1.1.0",
     "gulp-nodemon": "^2.0.6",
     "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
     "gulp-uglify": "^1.5.1",
     "jshint": "^2.8.0"
   }
