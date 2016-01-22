@@ -31,5 +31,5 @@ app.get('*', function(req, res) {
 	res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
 });
 
-app.listen(process.env.PORT);
-console.log('Magic happens on port ' + process.env.PORT);
+app.listen(config.port);
+console.log('Magic happens on port ' + config.port);
