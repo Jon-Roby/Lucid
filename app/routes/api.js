@@ -5,9 +5,10 @@ var jwt         = require('jsonwebtoken');
 
 if (process.env.NODE_ENV == undefined) {
 	var config      = require('../../config/auth.js');
+	var secret      = config.secret; 
 }
 
-var secret      = config.secret; // config.secret; (process.env.secret ||
+
 
 
 module.exports = function(app, express) {
