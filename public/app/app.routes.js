@@ -61,7 +61,15 @@ angular.module('app.routes', ['ui.router'])
         url: '/posts/:post_id',
         views: {
           '': {
+            templateUrl: "app/components/postDisplay/postDisplayLayout.html"
+          },
+          'postDisplay@post': {
             templateUrl: "app/components/postDisplay/postDisplayView.html",
+            controller: "postDisplayController",
+            controllerAs: "postDisplay"
+          },
+          'postDetails@post': {
+            templateUrl: "app/components/postDisplay/postDisplayDetails.html",
             controller: "postDisplayController",
             controllerAs: "postDisplay"
           },

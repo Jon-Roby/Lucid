@@ -34,6 +34,8 @@ angular.module('mainCtrl', [])
   		vm.processing = true;
   		vm.error = '';
 
+      Auth.logout();
+
   		Auth.login(vm.loginData.username, vm.loginData.password)
   			.success(function(data) {
 
@@ -47,9 +49,10 @@ angular.module('mainCtrl', [])
   	};
 
   	vm.logout = function() {
+      console.log("culkjlkjlkj");
   		Auth.logout();
   		vm.user = '';
 
-  		$location.path('/login');
+  		// $state.go('posts');
   	};
 });
