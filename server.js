@@ -3,7 +3,7 @@ var app        = express();
 var bodyParser = require('body-parser');
 var morgan     = require('morgan');
 var mongoose   = require('mongoose');
-var config 	   = require('./config/auth.js');
+// var config 	   = require('./config/auth.js');
 var path 	     = require('path');
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,7 +18,7 @@ app.use(function(req, res, next) {
 
 app.use(morgan('dev'));
 
-mongoose.connect(config.database);
+mongoose.connect(process.env.MONGOLAB_URI || config.database);
 
 app.use(express.static(__dirname + '/public'));
 
@@ -31,5 +31,5 @@ app.get('*', function(req, res) {
 	res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
 });
 
-app.listen(config.port);
-console.log('Magic happens on port ' + config.port);
+app.listen(process.env.PORT);
+console.log('Magic happens on port ' + process.env.PORT);

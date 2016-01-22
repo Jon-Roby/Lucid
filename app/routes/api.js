@@ -3,7 +3,7 @@ var User        = require('../models/user');
 var Post        = require('../models/post');
 var jwt         = require('jsonwebtoken');
 var config      = require('../../config/auth.js');
-var secret      = config.secret;
+var secret      = process.env.secret // config.secret;
 
 module.exports = function(app, express) {
 
