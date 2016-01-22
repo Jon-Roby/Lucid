@@ -2,7 +2,7 @@ var bodyParser  = require('body-parser');
 var User        = require('../models/user');
 var Post        = require('../models/post');
 var jwt         = require('jsonwebtoken');
-var config      = require('../../config/auth.js');
+// var config      = require('../../config/auth.js');
 var secret      = process.env.secret // config.secret;
 
 module.exports = function(app, express) {
