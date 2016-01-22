@@ -1,5 +1,5 @@
 <div class="icons">
-  <div id="icons-title">icons</div>
+  <div class="icons-title">icons</div>
   <div ng-repeat="icon in icons.icons">
     <div id="icons-link"><a  href="/users/{{icon._id}}">{{ icon.username }}</a></div>
     <div ng-repeat="iconArray in icon.posts | limitTo: 3"> <!-- Also icon.posts.slice(0,2) -->

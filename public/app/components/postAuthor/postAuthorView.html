@@ -1,6 +1,6 @@
-<div class="lessons-left">
-  postAuthorView
-  {{ postAuthor.post.userData.name }}
+<div class="lists">
+  <div class="icons-title">author</div>
+  {{ postAuthor.post.userData.username }}
   {{ postAuthor.post.userData.upvotes }}
   <div ng-repeat="n in postAuthor.post.userData.posts track by $index" >
     <div ng-repeat="(key, value) in n">

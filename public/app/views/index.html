@@ -51,7 +51,7 @@
     <script src="app/app.js"></script>
   </head>
 
-  <body ng-app="myApp" ng-controller="mainController as main">
+  <body ng-app="myApp">
 
 
 
@@ -88,8 +88,9 @@
 
           <ul class="list-display-row">
             <li><a ui-sref="postCreate" id="button-write" class="button">write</a></li>
-            <li><a ui-sref="login" ng-hide="main.loggedIn" id="button-log" class="button">login</a></li>
-            <li><a ui-sref="/" ng-hide="!main.loggedIn" id="button-log" class="button" ng-click="main.doLogout()">logout</a></li>
+
+            <li><button ng-if="!main.loggedIn" id="button-log" ng-click="main.doLogin()" class="button">logout</button></li>
+            <li><button ng-if="main.loggedIn" id="button-log" ng-click="main.doLogout()" class="button">logout</button></li>
           </ul>
 
         </div>
