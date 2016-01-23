@@ -2,6 +2,7 @@ angular.module('myApp',
 
 [
 	'app.routes',
+	'angularMoment',
 	'authService',
 	'mainCtrl',
 	// 'userCtrl',

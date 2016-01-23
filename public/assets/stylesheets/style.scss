@@ -1,5 +1,6 @@
 @import 'base/module';
 @import 'components/module';
+@import 'layout/module';
 
 @font-face {
 	font-family: 'Montserrat-Light';
@@ -20,8 +21,10 @@ body {
   font-family: 'Montserrat-Light';
 	letter-spacing: .5px;
 	// background-image: url("map.jpg");
-	// background-color: transparent;
+	background-color: transparent;
 	background-size: contain;
+	background-color: #22313F;
+	// background: linear-gradient($color-primary, #3f5a73)
 
 
 }

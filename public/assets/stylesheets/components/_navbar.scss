@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
+
   li {
     float: left;
     a {
@@ -17,6 +18,7 @@
 
 // Fix navbar to top and set colors
 #navbar {
+
 	border-bottom: 1px solid $color-light-gray;
 	border-top: 2px solid $color-primary;
 	z-index: 1;
@@ -25,18 +27,13 @@
 	background-color: white;
 	opacity: .97;
   #navbar-container {
-  	max-width: 1000px;
-  	margin-left: auto;
-  	margin-right: auto;
-  	display: flex;
-  	justify-content: space-between;
+  	@extend %container;
   	align-items: center;
   }
 }
 
-#navbar-left {
-	width: 500px;
-	display: flex;
+#navbar-container-left {
+	@extend %container-left;
 	align-items: center;
   li a {
     color: $color-dark-gray;
@@ -45,11 +42,11 @@
 
 // Magic numbers. Make sure everything lines up
 #navbar-title {
-  // padding-left: 0px;
-	// padding-right: 20px;
+	@extend %container-inner-left;
+
 	padding-top: 10px;
 	padding-bottom: 10px;
-	padding-right: 34px;
+	// padding-right: 34px;
 
 	letter-spacing: 6px;
 
@@ -68,10 +65,11 @@
 
 // Remove magical values for padding and height.
 #navbar-options {
+	@extend %container-inner-right;
   li {
     padding-top: 19px;
 	  padding-bottom: 19px;
-    width: 85px;
+    // width: 85px;
 
     color: $color-primary;
     &:hover {
@@ -91,26 +89,30 @@
 }
 
 .navbar-right {
-	width: 200px;
+	@extend %container-right;
 }
 
-.button {
-  @extend %button;
-}
+// .button {
+//   @extend %button;
+// }
 
-#button-write {
-	margin-right: 28px;
-	background-color: $color-primary ;
-	color: white;
-	border: 1px solid $color-primary;
-}
+// #button-write {
+// 	margin-right: 28px;
+// 	background-color: white;
+// 	color: #87D37C;
+// 	border: 1px solid #87D37C;
+//
+// 	// border-bottom: 2px solid #fd4f56;
+//
+//
+// }
 
-#button-log {
-
-	background-color: white ;
-	color: $color-primary;
-	border: 1px solid $color-primary;
-}
+// #button-log {
+//
+// 	background-color: white ;
+// 	color: $color-primary;
+// 	border: 1px solid $color-primary;
+// }
 
 
 

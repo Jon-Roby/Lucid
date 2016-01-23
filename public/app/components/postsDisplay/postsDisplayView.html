@@ -1,29 +1,22 @@
 
-<div class="postsDisplay-center">
+<div ng-repeat="post in postsDisplay.posts">
+	<div class="postsDisplay-card">
 
-	<div id="postsDisplay-title">posts</div>
-	<div ng-repeat="post in postsDisplay.posts">
-		<div class="postsDisplay-card">
+		<div class="postsDisplay-top">
+			<div class="postsDisplay-author">{{ post.authorName }}</div>
+			<time am-time-ago="post.createdAt"></time>
+		</div>
 
-			<div class="postsDisplay-top">
-				<div class="postsDisplay-author">{{ post.authorName }}</div>
+		<div class="postsDisplay-middle">
+			<a ng-href="/posts/{{ post._id }}" class="postsDisplay-title">{{ post.title }}</a>
+			<div class="postsDisplay-body"><p>{{ post.body }}</p></div>
+		</div>
 
-				<time am-time-ago="post.createdAt"></time>
-			</div>
-
-			<div>
-				<a ng-href="/posts/{{ post._id }}" class="postsDisplay-title">{{ post.title }}</a>
-				<div class="postsDisplay-body"><p>{{ post.body }}</p></div>
-
-			</div>
-
-			<div class="postsDisplay-bottom">
-				<div>{{ post.likes.length }} likes</div>
-				<div>0 responses</div>
-			</div>
-
+		<div class="postsDisplay-bottom">
+			<div>0 views</div>
+			<div>{{ post.likes.length }} likes</div>
+			<div>0 responses</div>
 		</div>
 
 	</div>
-
-  </div>
+</div>
