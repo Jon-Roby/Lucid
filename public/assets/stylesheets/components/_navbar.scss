@@ -19,18 +19,30 @@
 // Fix navbar to top and set colors
 #navbar {
 
-	border-bottom: 1px solid $color-light-gray;
-	border-top: 2px solid $color-primary;
+	// border-bottom: 1px solid $color-light-gray;
+
 	z-index: 1;
 	position: fixed;
 	width: 100%;
 	background-color: white;
-	opacity: .97;
+	// opacity: .97;
+
+	border-top: 2px solid $color-primary;
+	border-bottom: 1px solid #f2f2f2;
+
+
+
+	// @include type-setting(2);
+
   #navbar-container {
   	@extend %container;
+		height: $base-line-height * 3;
+
   	align-items: center;
   }
 }
+
+
 
 #navbar-container-left {
 	@extend %container-left;
@@ -44,16 +56,17 @@
 #navbar-title {
 	@extend %container-inner-left;
 
-	padding-top: 10px;
-	padding-bottom: 10px;
+	// padding-top: 10px;
+	// padding-bottom: 10px;
 	// padding-right: 34px;
 
-	letter-spacing: 6px;
+	letter-spacing: 8px;
 
   font-family: "Archer SSm A", "Archer SSm B";
   font-style: normal;
   font-weight: 700;
-  font-size: 2em;
+  font-size: $base-font-size * 2.2;
+
 
   .first {
     color: $color-primary;
@@ -66,26 +79,67 @@
 // Remove magical values for padding and height.
 #navbar-options {
 	@extend %container-inner-right;
-  li {
-    padding-top: 19px;
-	  padding-bottom: 19px;
+	@extend %column-container;
+	display: flex;
+	flex-direction: row;
+
+
+  div {
+		height: $base-line-height * 3;
+
+
+    // padding-top: 19px;
+	  // padding-bottom: 19px;
     // width: 85px;
+		display: flex;
+		align-items: center;
+
+		div {
+			// padding-left: $base-line-height;
+			height: $base-line-height;
+			font-size: $base-font-size;
+
+		}
+
 
     color: $color-primary;
     &:hover {
-      border-bottom: 2px solid $color-primary;
+      // border-bottom: 2px solid $color-primary;
       // The border bottom won't work without height.
       // I'm not sure why this is working. Just luck.
-      height: 18px;
-      a {
-        color: $color-primary;
-      }
+      // height: 18px;
+      // a {
+      //   color: $color-primary;
+      // }
     }
   }
 }
+.navbar-options-space-filler {
+	width: $base-line-height * 1.5
+}
+.navbar-options-deselected {
+	border-bottom: none;
+
+	transition: border-bottom 1s;
+	// transform: scaleX(1.2);
+
+}
+
+.navbar-options-selected {
+	border-bottom: 2px solid $color-primary;
+	border-top: 2px solid transparent;
+
+	// transition: border-bottom 1s;
+	// transform: scaleX(1.2);
+	// transition: transform;
+	// transform: translate(30px, 0px);
+
+}
+
+
 
 #trending {
-	margin-right: 20px;
+	// margin-right: 20px;
 }
 
 .navbar-right {

@@ -1,6 +1,13 @@
 var gulp       = require('gulp');
 var sass       = require('gulp-sass');
+
+var postcss      = require('gulp-postcss');
+var sourcemaps   = require('gulp-sourcemaps');
+var autoprefixer = require('autoprefixer');
+
+var csslint    = require('gulp-csslint');
 var minifyCSS  = require('gulp-minify-css');
+
 var rename     = require('gulp-rename');
 var jshint     = require('gulp-jshint');
 var concat     = require('gulp-concat');
@@ -11,6 +18,11 @@ var nodemon    = require('gulp-nodemon');
 gulp.task('css', function() {
   return gulp.src('public/assets/stylesheets/style.scss')
     .pipe(sass())
+    // .pipe(sourcemaps.init())
+    // .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+    // .pipe(sourcemaps.write('.'))
+    // .pipe(csslint())
+    // .pipe(csslint.reporter())
     .pipe(minifyCSS())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('public/assets/stylesheets'));

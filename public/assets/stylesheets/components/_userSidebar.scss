@@ -1,27 +1,54 @@
-#userSidebar-title {
-  color: $color-dark-gray;
-  padding-bottom: 10px;
-  border-bottom: 1px solid $color-dark-gray; //$color-light-gray
-  font-family: "Archer SSm A", "Archer SSm B";
-  font-style: italic;
-  font-weight: 500;
-  font-size: 1.13em;
-}
+#userSidebar-container {
+  @extend %column-container;
+  background-color: #22313F;
 
-#userSidebar {
+  position: fixed;
+  height: 100%;
+
+  width: 225px; // not sure why it is necessary to reset this
+
+  display: flex;
+  flex-direction: column;
+
+  
+  // div {
+  //   flex: 1;
+  // }
+
+
+
   // color: #34495E;
-  background-color: white; //#FAFAFA
+  // background-color: #22313F; //#FAFAFA
   // border: 1px solid #34495E; /*  */
-  height: 1000px;
+  // height: 1000px;
 
+  // border-right: 1px solid white;
+
+  background-color: #fafafa;
+  border-left: 1px solid #f2f2f2;
+  border-right: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
 }
 
-.userSidebar-subheader {
-  padding-top: 8px;
-  padding-bottom: 8px;
+
+#userSidebar-header {
+  @extend %column-header;
 }
 
+
+
+// #userSidebartitle {
+//   color: white;
+//   border-color: white;
+// }
+//
+// #listsa a {
+//   color: $color-secondary;
+// }
+
 .userSidebar-subheader {
+  // padding-top: 8px;
+  // padding-bottom: 8px;
   text-decoration: none;
   color: $color-primary;
 }

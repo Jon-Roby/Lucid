@@ -2,6 +2,7 @@ angular.module('myApp',
 
 [
 	'app.routes',
+	'ngAnimate',
 	'angularMoment',
 	'authService',
 	'mainCtrl',

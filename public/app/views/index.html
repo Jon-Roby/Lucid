@@ -58,7 +58,7 @@
     <script src="app/app.js"></script>
   </head>
 
-  <body ng-app="myApp">
+  <body ng-app="myApp" ng-controller="mainController as main">
 
 
     <!-- Navbar -->
@@ -80,11 +80,16 @@
           </div>
 
           <div id="navbar-options">
-            <ul class="list-display-row">
-              <li id="trending"><a ui-sref="posts">trending</a></li>
-              <li><a ui-sref="posts">new</a></li>
-              <li><a ui-sref="posts">top</a></li>
-            </ul>
+            <!-- <ul class="list-display-row">
+              <div ng-class="main.trending === main.selectedTab ? 'tab-selected' : 'tab-deselected' " ng-click="main.switchTab(main.trending)" >recent</div>
+              <div ng-class="main.recent === main.selectedTab ? 'tab-selected' : 'tab-deselected' " ng-click="main.switchTab(main.recent)" >recent</div>
+              <div ng-class="main.popular === main.selectedTab ? 'tab-selected' : 'tab-deselected' " ng-click="main.switchTab(main.popular)">popular</div>
+            </ul> -->
+
+            <div ng-class="main.trending === main.selectedTab ? 'navbar-options-selected' : 'navbar-options-deselected' " ng-click="main.switchTab(main.trending)"><div>recent</div></div><span class="navbar-options-space-filler"></span>
+            <div ng-class="main.recent === main.selectedTab ? 'navbar-options-selected' : 'navbar-options-deselected' " ng-click="main.switchTab(main.recent)"><div>trending</div></div><span class="navbar-options-space-filler"></span>
+            <div ng-class="main.popular === main.selectedTab ? 'navbar-options-selected' : 'navbar-options-deselected' " ng-click="main.switchTab(main.popular)"><div>popular</div></div><span class="navbar-options-space-filler"></span>
+
           </div>
 
         </div>

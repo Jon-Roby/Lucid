@@ -19,8 +19,10 @@ $line-heights: (
   2: $base-line-height * 2
 );
 
+
+
 @function line-height($level) {
-  @return map-get($line-height, $level);
+  @return map-get($line-heights, $level);
 }
 
 @mixin type-setting($level: 0) {

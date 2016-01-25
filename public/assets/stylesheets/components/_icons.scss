@@ -1,16 +1,18 @@
-.icons-title {
-  color: $color-dark-gray;
-  padding-bottom: 10px;
-  border-bottom: 1px solid  $color-dark-gray; //$color-light-gray
-  font-family: "Archer SSm A", "Archer SSm B";
-  font-style: italic;
-  font-weight: 500;
-  font-size: 1.13em;
+#icons-container {
+  @extend %column-container;
+
+  // border: 1px solid #f2f2f2;
+  // border-top: 1px solid white;
+  
+}
+
+#icons-header {
+  @extend %column-header;
 }
 
 #icons-link {
-  padding-top: 8px;
-  padding-bottom: 8px;
+  // padding-top: 8px;
+  // padding-bottom: 8px;
 }
 
 #icons-link a {

@@ -49,6 +49,8 @@ angular.module('app.routes', ['ui.router'])
         }
       })
 
+      
+
       .state('postCreate', {
         url: '/posts/create',
         templateUrl: 'app/components/postCreate/postCreateView.html',

@@ -12,6 +12,8 @@ angular.module('postsDisplayCtrl', ['postsDisplayService'])
 		// 			});
 		// 	});
 
+		
+
 		PostsDisplay.all()
 			.success(function(data) {
 				vm.processing = false;

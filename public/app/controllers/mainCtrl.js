@@ -15,6 +15,25 @@ angular.module('mainCtrl', [])
   			});
     });
 
+    vm.trending = "trending";
+    vm.recent = "recent";
+    vm.popular = "popular";
+
+    vm.selectedTab = vm.trending;
+
+    console.log("main.selectedTab === vm.recent: " + (vm.selectedTab === vm.recent).toString());
+    console.log("main.selectedTab === vm.popular: " + (vm.selectedTab === vm.popular).toString());
+
+		vm.switchTab = function(tab) {
+
+			vm.selectedTab = tab;
+
+      console.log("main.selectedTab === vm.recent: " + (vm.selectedTab === vm.recent).toString());
+      console.log("main.selectedTab === vm.popular: " + (vm.selectedTab === vm.popular).toString());
+		};
+
+
+
   	vm.signup = function() {
   		vm.processing = true;
   		vm.error = '';

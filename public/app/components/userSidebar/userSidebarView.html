@@ -16,13 +16,13 @@
 
 
 
-<div id="userSidebar">
-  <div id="userSidebar-title"> {{ menu.userData.username }} profile</div>
+<div id="userSidebar-container">
+  <div id="userSidebar-header">profile</div>
 
   <div class="userSidebar-subheader">Bookmarks</div>
   <div ng-repeat="n in menu.userData.bookmarks" >
     <div ng-repeat="(key, value) in n">
-      <div class="lists"><a href="/posts/{{key}}">{{ value }}</a></div>
+      <div id="listsa" class="lists"><a href="/posts/{{key}}">{{ value }}</a></div>
     </div>
   </div>
 
