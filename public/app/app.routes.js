@@ -25,23 +25,23 @@ angular.module('app.routes', ['ui.router'])
   			controllerAs: 'user'
   		})
 
-      .state('posts', {
-        url: '/posts',
+      .state('posts-trending', {
+        url: '/posts/trending',
         views: {
           '': {
             templateUrl: "app/components/postsDisplay/postsDisplayLayout.html"
           },
-          'postsDisplay@posts': {
+          'postsDisplay@posts-trending': {
             templateUrl: "app/components/postsDisplay/postsDisplayView.html",
             controller: "postsDisplayController",
             controllerAs: "postsDisplay"
           },
-          'icons@posts': {
+          'icons@posts-trending': {
             templateUrl: "app/components/icons/iconsView.html",
             controller: "iconsController",
             controllerAs: "icons"
           },
-          'menu@posts': {
+          'menu@posts-trending': {
             templateUrl: 'app/components/userSidebar/userSidebarView.html',
             controller: 'userSidebarController',
             controllerAs: 'menu'
@@ -49,7 +49,55 @@ angular.module('app.routes', ['ui.router'])
         }
       })
 
-      
+      .state('posts-popular', {
+        url: '/posts/popular',
+        views: {
+          '': {
+            templateUrl: "app/components/postsDisplay/postsDisplayLayout.html"
+          },
+          'postsDisplay@posts-popular': {
+            templateUrl: "app/components/postsDisplay/postsDisplayView.html",
+            controller: "postsDisplayController",
+            controllerAs: "postsDisplay"
+          },
+          'icons@posts-popular': {
+            templateUrl: "app/components/icons/iconsView.html",
+            controller: "iconsController",
+            controllerAs: "icons"
+          },
+          'menu@posts-popular': {
+            templateUrl: 'app/components/userSidebar/userSidebarView.html',
+            controller: 'userSidebarController',
+            controllerAs: 'menu'
+          }
+        }
+      })
+
+      .state('posts-new', {
+        url: '/posts/new',
+        views: {
+          '': {
+            templateUrl: "app/components/postsDisplay/postsDisplayLayout.html"
+          },
+          'postsDisplay@posts-new': {
+            templateUrl: "app/components/postsDisplay/postsDisplayView.html",
+            controller: "postsDisplayController",
+            controllerAs: "postsDisplay"
+          },
+          'icons@posts-new': {
+            templateUrl: "app/components/icons/iconsView.html",
+            controller: "iconsController",
+            controllerAs: "icons"
+          },
+          'menu@posts-new': {
+            templateUrl: 'app/components/userSidebar/userSidebarView.html',
+            controller: 'userSidebarController',
+            controllerAs: 'menu'
+          }
+        }
+      })
+
+
 
       .state('postCreate', {
         url: '/posts/create',

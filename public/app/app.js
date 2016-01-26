@@ -6,6 +6,8 @@ angular.module('myApp',
 	'angularMoment',
 	'authService',
 	'mainCtrl',
+
+	'postsOptionsService',
 	// 'userCtrl',
 	// 'userService',
 	'postsDisplayCtrl',

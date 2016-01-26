@@ -51,6 +51,8 @@
     <script src="app/components/postCreate/postCreateService.js"></script>
     <script src="app/components/userDisplay/userDisplayService.js"></script>
 
+    <script src="app/components/postsOptions.js"></script>
+
     <!-- <script src="app/services/userService.js"></script> -->
 
     <!-- Main Angular App Files -->
@@ -86,16 +88,44 @@
               <div ng-class="main.popular === main.selectedTab ? 'tab-selected' : 'tab-deselected' " ng-click="main.switchTab(main.popular)">popular</div>
             </ul> -->
 
-            <div ng-class="main.trending === main.selectedTab ? 'navbar-options-selected' : 'navbar-options-deselected' " ng-click="main.switchTab(main.trending)"><div>recent</div></div><span class="navbar-options-space-filler"></span>
-            <div ng-class="main.recent === main.selectedTab ? 'navbar-options-selected' : 'navbar-options-deselected' " ng-click="main.switchTab(main.recent)"><div>trending</div></div><span class="navbar-options-space-filler"></span>
-            <div ng-class="main.popular === main.selectedTab ? 'navbar-options-selected' : 'navbar-options-deselected' " ng-click="main.switchTab(main.popular)"><div>popular</div></div><span class="navbar-options-space-filler"></span>
+            <div id="navbar-options-container">
+
+              <!-- Navbar Options -->
+              <div id="navbar-options-top">
+                <!-- <div ng-click="main.switchTab(main.trending)"><div>recent</div></div><span class="navbar-options-space-filler"></span>
+                <div ng-click="main.switchTab(main.recent)"><div>trending</div></div><span class="navbar-options-space-filler"></span>
+                <div ng-click="main.switchTab(main.popular)"><div>popular</div></div><span class="navbar-options-space-filler"></span> -->
+
+                <!-- <div ng-class="main.trending === main.selectedTab ? 'navbar-options-selected' : 'navbar-options-deselected' " ng-click="main.switchTab(main.trending)"><div>recent</div></div><span class="navbar-options-space-filler"></span>
+                <div ng-class="main.recent === main.selectedTab ? 'navbar-options-selected' : 'navbar-options-deselected' " ng-click="main.switchTab(main.recent)"><div>trending</div></div><span class="navbar-options-space-filler"></span>
+                <div ng-class="main.popular === main.selectedTab ? 'navbar-options-selected' : 'navbar-options-deselected' " ng-click="main.switchTab(main.popular)"><div>popular</div></div><span class="navbar-options-space-filler"></span> -->
+
+
+                <div class="navbar-options-test-width" ng-click="myStyle={'margin-left': '0px', 'width': '35px'}"><div>new</div></div><span class="navbar-options-space-filler"></span>
+                <div class="navbar-options-test-width" ng-click="myStyle={'margin-left': '65px', 'width': '72px'}"><div>trending</div></div><span class="navbar-options-space-filler"></span>
+                <div class="navbar-options-test-width" ng-click="myStyle={'margin-left': '167px', 'width': '65px'}"><div>popular</div></div><span class="navbar-options-space-filler"></span>
+
+              </div>
+
+              <!-- Slider -->
+              <div id="navbar-options-bottom">
+                <div id="slider" ng-style="myStyle"></div>
+              </div>
+
+            </div>
+
 
           </div>
 
+
+
         </div>
 
-        <div id="navbar-container-right">
 
+
+        <div id="navbar-container-right">
+          <!-- <button ng-click="main.setSelected('charm')">setSelected{{main.selected}}</button>
+        	<button ng-click="main.getSelected()">getSelected</button>{{main.selected}} -->
           <ul class="list-display-row">
             <li><a ui-sref="postCreate">write</a></li>
             <li><a ng-if="!main.loggedIn" class="button" ng-click="main.doLogin()" class="button">logout</a></li>

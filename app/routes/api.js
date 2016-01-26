@@ -382,50 +382,116 @@ module.exports = function(app, express) {
 
 	});
 
-	// apiRouter.route('/posts/:post_id')
-	// 	.get(function(req, res) {
-	// 		Post.findById(req.params.post_id, function(err, post) {
-	// 			if (err) res.send(err);
-	// 			res.json(post);
-	// 		});
-	// 	});
+
+
+	apiRouter.route('/posts/trending')
+
+		.get(function(req, res) {
+			// Post.find().sort({_id:1}).limit(4)
+			Post.find({}).sort({_id: -1}).exec(function(err, posts) {
+				if (err) res.send(err);
+			  res.json(posts);
+			});
+		});
+
+	apiRouter.route('/posts/popular')
+
+		.get(function(req, res) {
+			// Post.find().sort({_id:1}).limit(4)
+			Post.find({}).sort({upvotes: -1}).exec(function(err, posts) {
+				if (err) res.send(err);
+			  res.json(posts);
+			});
+		});
+
+	apiRouter.route('/posts/new')
+
+		.get(function(req, res) {
+			// Post.find().sort({_id:1}).limit(4)
+			Post.find({}).sort({_id: -1}).exec(function(err, posts) {
+				if (err) res.send(err);
+			  res.json(posts);
+			});
+		});
 
 	apiRouter.route('/posts/:post_id')
-		// get the user with that id
 		.get(function(req, res) {
 			Post.findById(req.params.post_id, function(err, post) {
 				if (err) res.send(err);
-				// return that user
 				res.json(post);
 			});
-		})
-
-		// update the post with this id
-		.put(function(req, res) {
-			Post.findById(req.params.post_id, function(err, post) {
-				if (err) res.send(err);
-				// set the new post information if it exists in the request
-				if (req.body.title) post.title = req.body.title;
-				if (req.body.body) post.body = req.body.body;
-
-				post.save(function(err) {
-					if (err) res.send(err);
-					res.json({ message: 'Post updated!' });
-				});
-			});
-		})
-
-		.delete(function(req, res) {
-
-			// use request object to grab id ... if id is identical to author id on Post then it is allowed
-			Post.remove({
-				_id: req.params.post_id
-			}, function(err, post) {
-				if (err) res.send(err);
-
-				res.json({ message: 'Successfully deleted' });
-			});
 		});
+
+
+
+
+	// apiRouter.route('/posts/:post_id')
+	// 	// get the user with that id
+	// 	.get(function(req, res) {
+	// 		Post.findById(req.params.post_id, function(err, post) {
+	// 			if (err) res.send(err);
+	// 			// return that user
+	// 			res.json(post);
+	// 		});
+	// 	})
+	//
+	// 	// update the post with this id
+	// 	.put(function(req, res) {
+	// 		Post.findById(req.params.post_id, function(err, post) {
+	// 			if (err) res.send(err);
+	// 			// set the new post information if it exists in the request
+	// 			if (req.body.title) post.title = req.body.title;
+	// 			if (req.body.body) post.body = req.body.body;
+	//
+	// 			post.save(function(err) {
+	// 				if (err) res.send(err);
+	// 				res.json({ message: 'Post updated!' });
+	// 			});
+	// 		});
+	// 	})
+	//
+	// 	.delete(function(req, res) {
+	//
+	// 		// use request object to grab id ... if id is identical to author id on Post then it is allowed
+	// 		Post.remove({
+	// 			_id: req.params.post_id
+	// 		}, function(err, post) {
+	// 			if (err) res.send(err);
+	//
+	// 			res.json({ message: 'Successfully deleted' });
+	// 		});
+	// 	});
+
+
+
+
+
+
+	// apiRouter.route('/posts/trending')
+	// 	// get the user with that id
+	// 	.get(function(req, res) {
+	// 		Post.findById(req.params.post_id, function(err, post) {
+	// 			if (err) res.send(err);
+	// 			// return that user
+	// 			res.json(post);
+	// 		});
+	//
+	// 		Post.find().sort({_id:1}).limit(4)
+	// 	});
+	//
+	// apiRouter.route('/posts/popular')
+	// 	// get the user with that id
+	// 	.get(function(req, res) {
+	// 		Post.findById(req.params.post_id, function(err, post) {
+	// 			if (err) res.send(err);
+	// 			// return that user
+	// 			res.json(post);
+	// 		});
+	// 	});
+	//
+
+
+
 
 	apiRouter.route('/posts/:post_id/upvote')
 		.put(function(req, res) {

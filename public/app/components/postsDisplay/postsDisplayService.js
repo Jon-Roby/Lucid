@@ -8,6 +8,10 @@ angular.module('postsDisplayService', [])
 		return $http.get('/api/posts/');
 	};
 
+	postFactory.getId = function() {
+		return $http.get('/api/posts/new');
+	};
+
 
 	return postFactory;
 

@@ -47,9 +47,8 @@
 #navbar-container-left {
 	@extend %container-left;
 	align-items: center;
-  li a {
-    color: $color-dark-gray;
-  }
+	height: $base-line-height * 3;
+  // background-color: gray;
 }
 
 // Magic numbers. Make sure everything lines up
@@ -76,65 +75,89 @@
   }
 }
 
+// $options-width: 100px;
+
 // Remove magical values for padding and height.
 #navbar-options {
 	@extend %container-inner-right;
 	@extend %column-container;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	height: $base-line-height * 3;
 
-
-  div {
-		height: $base-line-height * 3;
-
-
-    // padding-top: 19px;
-	  // padding-bottom: 19px;
-    // width: 85px;
-		display: flex;
-		align-items: center;
-
-		div {
-			// padding-left: $base-line-height;
-			height: $base-line-height;
-			font-size: $base-font-size;
-
-		}
-
-
-    color: $color-primary;
-    &:hover {
-      // border-bottom: 2px solid $color-primary;
-      // The border bottom won't work without height.
-      // I'm not sure why this is working. Just luck.
-      // height: 18px;
-      // a {
-      //   color: $color-primary;
-      // }
-    }
-  }
+	// background-color: yellow;
 }
+
+
+
+#navbar-options-top {
+
+	height: $base-line-height;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 58px;
+	// width: $options-width * 3;
+  // background-color: purple;
+  
+}
+
+#navbar-options-bottom {
+	height: 2px;
+	// max-width: $options-width * 3;
+
+}
+
+// Width for other sliders is included in the navbar/index.html
+#slider {
+	height: 2px;
+	width: 35px;
+	background-color: $color-primary;
+	transition: .5s ease-in-out;
+}
+
+// .navbar-options-test-width {
+// 	height: 58px;
+// 	background-color: red;
+// }
+
+// .trending-slider {
+//   margin-left: 0px;
+//   transition: .5s ease-in-out;
+// }
+//
+// .recent-slider {
+//   margin-left: 200px;
+//   transition: .5s ease-in-out;
+// }
+//
+// .popular-slider {
+//   margin-left: 400px;
+//   transition: .5s ease-in-out;
+// }
+
 .navbar-options-space-filler {
 	width: $base-line-height * 1.5
 }
-.navbar-options-deselected {
-	border-bottom: none;
-
-	transition: border-bottom 1s;
-	// transform: scaleX(1.2);
-
-}
-
-.navbar-options-selected {
-	border-bottom: 2px solid $color-primary;
-	border-top: 2px solid transparent;
-
-	// transition: border-bottom 1s;
-	// transform: scaleX(1.2);
-	// transition: transform;
-	// transform: translate(30px, 0px);
-
-}
+// .navbar-options-deselected {
+// 	border-bottom: none;
+//
+// 	transition: border-bottom 1s;
+// 	// transform: scaleX(1.2);
+//
+// }
+//
+// .navbar-options-selected {
+// 	border-bottom: 2px solid $color-primary;
+// 	border-top: 2px solid transparent;
+//
+// 	// transition: border-bottom 1s;
+// 	// transform: scaleX(1.2);
+// 	// transition: transform;
+// 	// transform: translate(30px, 0px);
+//
+// }
 
 
 
