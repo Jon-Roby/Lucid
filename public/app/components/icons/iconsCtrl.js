@@ -11,11 +11,11 @@ angular.module('iconsCtrl', ['iconsService'])
       });
 
 		vm.showPopover = function() {
-  		$scope.popoverIsVisible = true;
+  		vm.popoverIsVisible = true;
 		};
 
 		vm.hidePopover = function () {
-		  $scope.popoverIsVisible = false;
+		  vm.popoverIsVisible = false;
 		};
 
 	});
