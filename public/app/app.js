@@ -7,7 +7,7 @@ angular.module('myApp',
 	'authService',
 	'mainCtrl',
 
-	'postsOptionsService',
+	// 'postsOptionsService',
 	// 'userCtrl',
 	// 'userService',
 	'postsDisplayCtrl',

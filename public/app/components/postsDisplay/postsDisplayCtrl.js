@@ -1,6 +1,6 @@
-angular.module('postsDisplayCtrl', ['postsDisplayService', 'postsOptionsService'])
+angular.module('postsDisplayCtrl', ['postsDisplayService'])
 
-	.controller('postsDisplayController', function(PostsDisplay, Auth, PostsOptions, $stateParams) {
+	.controller('postsDisplayController', function(PostsDisplay, Auth, $location) {
 		var vm = this;
 		vm.processing = true;
 
@@ -12,27 +12,41 @@ angular.module('postsDisplayCtrl', ['postsDisplayService', 'postsOptionsService'
 		// 			});
 		// 	});
 
-		vm.selected = "";
+		// vm.selected = "";
+		//
+		// vm.getSelected = function() {
+		// 	vm.selected = PostsOptions.getSelected();
+		// };
+		// vm.setSelected = function(value) {
+    //   PostsOptions.setSelected(value);
+		// 	vm.selected = PostsOptions.getSelected(value);
+    // };
 
-		vm.getSelected = function() {
-			vm.selected = PostsOptions.getSelected();
-		};
-		vm.setSelected = function(value) {
-      PostsOptions.setSelected(value);
-			vm.selected = PostsOptions.getSelected(value);
-    };
 
 
-		// PostsDisplay.all()
-		// 	.success(function(data) {
-		// 		vm.processing = false;
-		// 		vm.posts = data;
-		// 	});
 
-		PostsDisplay.getId()
-			.success(function(data) {
-				vm.processing = false;
-				vm.posts = data;
-				console.log($state.params);
-			});
+		// case switch statement
+		
+		if ($location.path() === "/posts/trending") {
+			PostsDisplay.getTrendingPosts()
+				.success(function(data) {
+					vm.processing = false;
+					vm.posts = data;
+				});
+		} else if ($location.path() === "/posts/popular") {
+			PostsDisplay.getPopularPosts()
+				.success(function(data) {
+					vm.processing = false;
+					vm.posts = data;
+				});
+		} else if ($location.path() === "/posts/new") {
+			PostsDisplay.getNewPosts()
+				.success(function(data) {
+					vm.processing = false;
+					vm.posts = data;
+				});
+		} else {
+			console.log("hello");
+		}
+
 	});

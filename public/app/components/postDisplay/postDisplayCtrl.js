@@ -16,6 +16,7 @@ angular.module('postDisplayCtrl', ['postDisplayService'])
 			.success(function(data) {
 				vm.post = data;
 
+
         // // Is this still necessary? This is stored with the post?
         // // Make sure to make postAuthor clickable to go stright to profile
 				// Post.getUserId(vm.post.authorId)
@@ -44,7 +45,7 @@ angular.module('postDisplayCtrl', ['postDisplayService'])
 		};
 
 		vm.upvotePost = function() {
-
+			console.log(vm.post._id);
 			PostDisplay.upvotePost(vm.post._id)
 				.success(function(data) {
 

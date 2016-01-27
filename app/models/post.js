@@ -7,9 +7,11 @@ var PostSchema   = new Schema({
 	authorName: String,
 	title: String,
 	body: String,
-	upvotes: {type: Number, default: 0},
-	createdAt: { type: Date, default: Date.now },
-	likes: []
+
+	upvotes: [],
+	upvotes_count: {type: Number, default: 0},
+
+	createdAt: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model('Post', PostSchema);

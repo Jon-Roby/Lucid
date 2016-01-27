@@ -39,11 +39,44 @@ body {
 	// background-image: url("map.jpg");
 	background-color: transparent;
 	background-size: contain;
-	background-color: #22313F;
-	// background-color: rgba(0, 0, 0, 0.5);
+	// background-color: #22313F;
+	// background-color: #72d0f4;
+	// background-color: #1c9ccd;
+	// background-color: $color-secondary;
 	// background: linear-gradient($color-primary, #3f5a73)
 }
 
 .angular-view {
 	padding-top: 63px; //($base-line-height * 5) + 2px - This is the height of the navbar * 2/3 with 2px added because of the 2px border-top in th navbar
+}
+
+
+
+
+
+
+
+// Add styling for icons.
+/* Add the following CSS block to your own
+stylesheet. */
+.lnr {
+  display: inline-block;
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.05em;
+}
+
+.lnr-mustache {
+  color: #0F52BA;
+  /* We can use "color" for setting the color
+  of the SVG because we set its "fill" to
+  "currentColor" */
+  font-size: 40px;
+  /* We can use "font-size" for changing the size
+  of the SVG because its width and height were
+  set 1em.
+  To get crisp results, use sizes that are
+  a multiple of 20; because Linearicons was
+  designed on a 20 by 20 grid. */
 }

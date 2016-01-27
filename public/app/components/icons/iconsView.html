@@ -1,5 +1,6 @@
 <div id="icons-container">
   <div id="icons-header">icons</div>
+
   <div ng-repeat="icon in icons.icons">
     <div id="icons-link"><a  href="/users/{{icon._id}}">{{ icon.username }}</a></div>
     <div ng-repeat="iconArray in icon.posts | limitTo: 3"> <!-- Also icon.posts.slice(0,2) -->
@@ -8,4 +9,7 @@
       </div>
     </div>
   </div>
+
+  <div data-icon="ei-check" data-size="m"></div>
+  <svg class="lnr lnr-mustache"><use xlink:href="#lnr-mustache"></use></svg>
 </div>

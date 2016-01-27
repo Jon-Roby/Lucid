@@ -1,6 +1,6 @@
-angular.module('mainCtrl', ['postsOptionsService'])
+angular.module('mainCtrl', [])
 
-  .controller('mainController', function($rootScope, $location, Auth, PostsOptions) {
+  .controller('mainController', function($rootScope, $location, Auth, $state) {
 
   	var vm = this;
 
@@ -17,26 +17,45 @@ angular.module('mainCtrl', ['postsOptionsService'])
 
     vm.selected = "";
 
-		vm.getSelected = function() {
 
-			vm.selected = PostsOptions.getSelected();
-			// console.log("I am getting something " + vm.selected);
-		};
-		vm.setSelected = function(value) {
-      PostsOptions.setSelected(value);
-			vm.selected = PostsOptions.getSelected(value);
-    };
+    // case switch statement
+
+		if ($location.path() === "/posts/trending") {
+			vm.sliderMargin = 'navbar-options-left';
+		} else if ($location.path() === "/posts/popular") {
+			vm.sliderMargin = 'navbar-options-middle';
+		} else if ($location.path() === "/posts/new") {
+			vm.sliderMargin = 'navbar-options-right';
+		} else {
+			vm.sliderMargin = 'navbar-options-none';
+		}
+
+    // vm.sliderMargin = 'navbar-options-right';
+
+    vm.switchPage = function(page) {
+      $state.go(page)
+    }
+
+
+		// vm.getSelected = function() {
+    //
+		// 	vm.selected = PostsOptions.getSelected();
+		// 	// console.log("I am getting something " + vm.selected);
+		// };
+		// vm.setSelected = function(value) {
+    //   PostsOptions.setSelected(value);
+		// 	vm.selected = PostsOptions.getSelected(value);
+    // };
 		// console.log(vm.selected);
 
 
     // console.log("main.selectedTab === vm.recent: " + (vm.selectedTab === vm.recent).toString());
     // console.log("main.selectedTab === vm.popular: " + (vm.selectedTab === vm.popular).toString());
-		vm.switchTab = function(tab) {
-			vm.selectedTab = tab;
-
-      // console.log("main.selectedTab === vm.recent: " + (vm.selectedTab === vm.recent).toString());
-      // console.log("main.selectedTab === vm.popular: " + (vm.selectedTab === vm.popular).toString());
-		};
+		// vm.switchTab = function(tab) {
+		// 	vm.selectedTab = tab;
+    //
+    //
+		// };
 
 
 

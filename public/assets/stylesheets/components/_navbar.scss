@@ -69,9 +69,12 @@
 
   .first {
     color: $color-primary;
+
+		// color: #1c9ccd;
   }
   .second {
     color: $color-secondary;
+		// color: #72d0f4;
   }
 }
 
@@ -100,7 +103,7 @@
 	height: 58px;
 	// width: $options-width * 3;
   // background-color: purple;
-  
+
 }
 
 #navbar-options-bottom {
@@ -112,15 +115,53 @@
 // Width for other sliders is included in the navbar/index.html
 #slider {
 	height: 2px;
-	width: 35px;
+	// width: 72px;
 	background-color: $color-primary;
-	transition: .5s ease-in-out;
+
+
 }
 
-// .navbar-options-test-width {
-// 	height: 58px;
-// 	background-color: red;
+
+
+
+$navbar-options-trending-width: 71.9063px;
+$navbar-options-popular-width: 65.0156px;
+$navbar-options-new-width: 35.2344px;
+$navbar-options-space-filler: 30px;
+
+// Write function that takes in a padding and then each of the options
+// and outputs the answer
+
+// @function get-margin-left($option, $another-number){
+//   @return $some-number + $another-number;
 // }
+
+.navbar-options-left {
+	margin-left: 0px;
+	width: $navbar-options-trending-width;
+}
+
+.navbar-options-middle {
+	margin-left: $navbar-options-space-filler + $navbar-options-trending-width; //
+	width: $navbar-options-popular-width;
+}
+
+.navbar-options-right {
+	margin-left: ($navbar-options-space-filler * 2) + $navbar-options-trending-width + $navbar-options-popular-width; //167px
+	width: $navbar-options-new-width;
+}
+
+.navbar-options-none {
+	margin-left: 0px; //167px
+	width: 0px;
+}
+
+
+
+.navbar-options-test-width {
+	height: 58px;
+	background-color: red;
+}
 
 // .trending-slider {
 //   margin-left: 0px;

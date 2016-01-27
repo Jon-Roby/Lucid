@@ -12,6 +12,13 @@
     <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'> -->
 		<link rel="stylesheet" type="text/css" href="//cloud.typography.com/6030954/606888/css/fonts.css">
 
+    <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/evil-icons/1.7.8/evil-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/evil-icons/1.7.8/evil-icons.min.js"></script> -->
+
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/stylesheets/style.min.css">
 
@@ -101,21 +108,44 @@
                 <div ng-class="main.popular === main.selectedTab ? 'navbar-options-selected' : 'navbar-options-deselected' " ng-click="main.switchTab(main.popular)"><div>popular</div></div><span class="navbar-options-space-filler"></span> -->
 
 
-                <div class="navbar-options-test-width" ng-click="myStyle={'margin-left': '0px', 'width': '35px'}"><div>new</div></div><span class="navbar-options-space-filler"></span>
-                <div class="navbar-options-test-width" ng-click="myStyle={'margin-left': '65px', 'width': '72px'}"><div>trending</div></div><span class="navbar-options-space-filler"></span>
-                <div class="navbar-options-test-width" ng-click="myStyle={'margin-left': '167px', 'width': '65px'}"><div>popular</div></div><span class="navbar-options-space-filler"></span>
+                <!-- I WILL NEED TO RESTYLE YET AGAIN. IN THE CONTROLLER, STYLE DIVS ON THE BASIS OF STATE PARAMS -->
+                <!-- <div class="navbar-options-test-width" ><div ng-click="myStyle={'margin-left': '0px', 'width': '72px'}"><a  ui-sref="posts-trending">trending</a></div></div><span class="navbar-options-space-filler"></span>
+                <div class="navbar-options-test-width" ><div ng-click="myStyle={'margin-left': '65px', 'width': '65px'}"><a  ui-sref="posts-popular">popular</a></div></div><span class="navbar-options-space-filler"></span>
+                <div class="navbar-options-test-width" ><div ng-click="myStyle={'margin-left': '167px', 'width': '30px'}"><a  ui-sref="posts-new">new</a></div></div><span class="navbar-options-space-filler"></span> -->
+
+                <!-- <div class="navbar-options-test-width" ng-click="myStyle={'margin-left': '0px', 'width': '72px'}"><div>trending</div></div> <span class="navbar-options-space-filler"></span>
+                <div class="navbar-options-test-width" ng-click="myStyle={'margin-left': '65px', 'width': '65px'}"><div>popular</div></div> <span class="navbar-options-space-filler"></span>
+                <div class="navbar-options-test-width" ng-click="myStyle={'margin-left': '167px', 'width': '30px'}"><div>new</div></div>    <span class="navbar-options-space-filler"></span> -->
+
+                <!-- Add the following to test width of option: class="navbar-options-test-width" -->
+                <!-- <div ng-click="myStyle={'margin-left': '0px', 'width': '72px', 'transition': '.5s ease-in-out'}">   <div>trending</div>  </div>   <span class="navbar-options-space-filler"></span>
+                <div ng-click="myStyle={'margin-left': '102px', 'width': '65px', 'transition': '.5s ease-in-out'}"> <div>popular</div>   </div>   <span class="navbar-options-space-filler"></span>
+                <div ng-click="myStyle={'margin-left': '197px', 'width': '35px', 'transition': '.5s ease-in-out'}"> <div>new</div>       </div>   <span class="navbar-options-space-filler"></span> -->
+
+                <div ng-click="main.switchPage('posts-trending'); myStyle={'margin-left': '0px', 'width': '72px', 'transition': '.5s ease-in-out'}">    <div>trending</div>  </div>   <span class="navbar-options-space-filler"></span>
+                <div ng-click="main.switchPage('posts-popular'); myStyle={'margin-left': '102px', 'width': '65px', 'transition': '.5s ease-in-out'}"> <div>popular</div>   </div>   <span class="navbar-options-space-filler"></span>
+                <div ng-click="main.switchPage('posts-new'); myStyle={'margin-left': '197px', 'width': '35px', 'transition': '.5s ease-in-out'}" > <div>new</div>       </div>   <span class="navbar-options-space-filler"></span>
+
+
+                <div data-icon="ei-check" data-size="m"></div>
+                <svg class="lnr lnr-mustache"><use xlink:href="#lnr-mustache"></use></svg>
+                <!-- ,  -->
+
+
 
               </div>
 
               <!-- Slider -->
               <div id="navbar-options-bottom">
-                <div id="slider" ng-style="myStyle"></div>
+                <!-- <div id="slider" ng-class="main.sliderMargin" ng-style="myStyle"  ></div> -->
+                <div id="slider" ng-class="main.sliderMargin" ng-style="myStyle" ></div>
               </div>
 
             </div>
 
 
           </div>
+
 
 
 
@@ -132,13 +162,29 @@
             <li><a ng-if="main.loggedIn" class="button" ng-click="main.doLogout()" class="button">logout</a></li>
           </ul>
 
+          <div data-icon="ei-check" data-size="m"></div>
+          <svg class="lnr lnr-mustache"><use xlink:href="#lnr-mustache"></use></svg>
+
+
+
         </div>
 
       </div>
     </div>
 
+    <!-- <div data-icon="ei-archive"></div>
+    <div data-icon="ei-chart" data-size="s"></div>
+    <div data-icon="ei-check" data-size="m"></div>
+    <div data-icon="ei-spinner" data-size="m"></div>
+    <div data-icon="ei-cart" data-size="l" class="foo"></div>
+
+    <svg class="lnr lnr-mustache"><use xlink:href="#lnr-mustache"></use></svg> lnr-mustache -->
+
+
+
     <div class="angular-view" ui-view></div>
 
   </body>
+
 
 </html>

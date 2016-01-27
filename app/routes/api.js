@@ -165,7 +165,7 @@ module.exports = function(app, express) {
 
 	apiRouter.route('/users/icons')
 		.get(function(req, res) {
-			User.find().sort({upvotes: -1}).limit(5).exec(
+			User.find().sort({upvotes_count: -1}).limit(5).exec(
 				function(err, users) {
 					if (err) res.send(err);
 					res.json(users);
@@ -388,17 +388,31 @@ module.exports = function(app, express) {
 
 		.get(function(req, res) {
 			// Post.find().sort({_id:1}).limit(4)
-			Post.find({}).sort({_id: -1}).exec(function(err, posts) {
-				if (err) res.send(err);
-			  res.json(posts);
-			});
+			// Post.find({}).sort({_id: -1}).exec(function(err, posts) {
+			// 	if (err) res.send(err);
+			//   res.json(posts);
+			// });
+
+			Post.find()
+				.sort({_id: -1})
+				// .select({upvotes: -1})
+				.limit(3)
+				.sort({upvotes_count: -1})
+				.exec( function(err, posts) {
+					if (err) res.send(err);
+					console.log(posts);
+					// var items = posts.slice(0,3);
+					// console.log(items);
+					// res.json(items);
+					res.json(posts);
+				});
 		});
 
 	apiRouter.route('/posts/popular')
 
 		.get(function(req, res) {
 			// Post.find().sort({_id:1}).limit(4)
-			Post.find({}).sort({upvotes: -1}).exec(function(err, posts) {
+			Post.find({}).sort({upvotes_count: -1}).exec(function(err, posts) {
 				if (err) res.send(err);
 			  res.json(posts);
 			});
@@ -497,33 +511,36 @@ module.exports = function(app, express) {
 		.put(function(req, res) {
 			Post.findById(req.params.post_id, function(err, post) {
 				var action = '';
-				var index = post.likes.indexOf(req.decoded._id);
+				var index = post.upvotes.indexOf(req.decoded._id);
 				if (index === -1) {
-					post.likes.push(req.decoded._id);
+					post.upvotes.push(req.decoded._id);
+					post.upvotes_count += 1;
 
 					User.findById(post.authorId, function(err, user) {
-						user.upvotes += 1;
+						// user.upvotes_count += 1;                                          ******* ADD UPVOTES PROPERTY FOR USERS*** TO FIND POPULAR USERS
 						user.save(function(err) {
 						});
 					});
 
 					// case where there is only one item in array, which messes up slice
-				} else if (post.likes.length === 1 && post.likes[0] === req.decoded._id) {
-					post.likes = [];
+				} else if (post.upvotes.length === 1 && post.upvotes[0] === req.decoded._id) {
+					post.upvotes = [];
+					post.upvotes_count = 0;
 
 					User.findById(post.authorId, function(err, user) {
-						user.upvotes -= 1;
+						// user.upvotes_count -= 1;                                         ******* ADD UPVOTES PROPERTY FOR USERS*** TO FIND POPULAR USERS
 						user.save(function(err) {
 						});
 					});
 
 				} else {
-					var left = post.likes.slice(0, index);
-					var right = post.likes.slice(index+1, post.likes.length);
-					post.likes = left + right;
+					var left = post.upvotes.slice(0, index);
+					var right = post.upvotes.slice(index+1, post.upvotes.length);
+					post.upvotes = left + right;
+					post.upvotes_count -= 1;
 
 					User.findById(post.authorId, function(err, user) {
-						user.upvotes -= 1;
+						// user.upvotes_count -= 1;                                         ******* ADD UPVOTES PROPERTY FOR USERS*** TO FIND POPULAR USERS
 						user.save(function(err) {
 						});
 					});
