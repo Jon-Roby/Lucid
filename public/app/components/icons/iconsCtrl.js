@@ -10,4 +10,12 @@ angular.module('iconsCtrl', ['iconsService'])
         vm.icons = data;
       });
 
+		vm.showPopover = function() {
+  		$scope.popoverIsVisible = true;
+		};
+
+		vm.hidePopover = function () {
+		  $scope.popoverIsVisible = false;
+		};
+
 	});

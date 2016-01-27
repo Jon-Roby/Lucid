@@ -81,12 +81,15 @@
 
 
   a {
-    font-family: 'Avenir';
-  	font-style: normal;
+
+    font-family: "Archer SSm A", "Archer SSm B";
+    font-style: normal;
     // font-size: 1.5em;
   	font-weight: 500;
     color: $color-primary; // #2ecc71;
     text-decoration: none;
+
+
     &:hover {
       color: $color-secondary;
     }
@@ -99,8 +102,11 @@
 .postsDisplay-body {
   // height: 50%;
   // font-size: .95em;
-  font-family: Sans-serif;
-  font-weight: 100;
+
+  // font-family: Sans-serif;
+  // font-weight: 100;
+
+  font-family: 'Montserrat-Ultralight';
 
   color: #5A5A5A;
   @include type-setting(0);
@@ -131,6 +137,8 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+
+      line-height: $base-line-height * 1.125;
 }
 
 
@@ -138,11 +146,38 @@
 
 
 .postsDisplay-bottom {
-  line-height: $base-line-height * 2;
+  line-height: $base-line-height * 2.5;
   font-family: 'Montserrat-UltraLight';
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   color: $color-dark-gray;
   // font-size: .90em;
+}
+
+
+.lnr-bookmark {
+  color: #2ecc71;
+  transform: translate(0px, 6px);
+}
+
+.lnr-eye {
+  color: #BE90D4;
+  transform: translate(0px, 6px);
+}
+
+.lnr-bubble {
+  color: #6BB9F0;
+  transform: translate(0px, 6px);
+
+}
+
+.lnr-heart {
+  color: #fd5c63;
+  transform: translate(0px, 6px);
+}
+
+.lnr-star {
+  color: #F7CA18;
+  transform: translate(0px, 6px);
 }

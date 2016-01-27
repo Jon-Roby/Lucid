@@ -69,6 +69,9 @@
 
   <body ng-app="myApp" ng-controller="mainController as main">
 
+  
+    
+
 
     <!-- Navbar -->
 
@@ -128,7 +131,7 @@
 
 
                 <div data-icon="ei-check" data-size="m"></div>
-                <svg class="lnr lnr-mustache"><use xlink:href="#lnr-mustache"></use></svg>
+
                 <!-- ,  -->
 
 
@@ -157,13 +160,16 @@
           <!-- <button ng-click="main.setSelected('charm')">setSelected{{main.selected}}</button>
         	<button ng-click="main.getSelected()">getSelected</button>{{main.selected}} -->
           <ul class="list-display-row">
-            <li><a ui-sref="postCreate">write</a></li>
-            <li><a ng-if="!main.loggedIn" class="button" ng-click="main.doLogin()" class="button">logout</a></li>
-            <li><a ng-if="main.loggedIn" class="button" ng-click="main.doLogout()" class="button">logout</a></li>
+            <li><svg class="lnr lnr-alarm"><use xlink:href="#lnr-alarm"></use></svg></li>
+            <li><svg class="lnr lnr-magnifier"><use xlink:href="#lnr-magnifier"></use></svg></li>
+            <li><svg class="lnr lnr-pencil"><use xlink:href="#lnr-pencil"></use></svg><a ui-sref="postCreate"></a></li>
+            <li><a ng-if="!main.loggedIn" class="button" ng-click="main.doLogin()" class="button"></a></li>
+            <li><a ng-if="main.loggedIn" class="button" ng-click="main.doLogout()" class="button"></a></li>
+            <li><svg class="lnr lnr-menu"><use xlink:href="#lnr-menu"></use></svg></li>
+
           </ul>
 
-          <div data-icon="ei-check" data-size="m"></div>
-          <svg class="lnr lnr-mustache"><use xlink:href="#lnr-mustache"></use></svg>
+
 
 
 
@@ -186,5 +192,5 @@
 
   </body>
 
-
+<div>MongoDB Express Angular Node LinearIcons Gulp Bower Sass Github Repository location AWS HTML5 CSS3 JS</div>
 </html>
